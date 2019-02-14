@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
       ref1: '0307030053000166    ',
       ref2: '0307030053000166    ',
       systemCode: '03',
-      systemAmount: 53000
+      systemAmount: 53000,
+      systemTransactionCode: 'fv3^dfv*()4#$@FSA524BD'
     }
   }
 
