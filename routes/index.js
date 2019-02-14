@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
   buildMsg = {
     resultCode: 200,
     resultData: {
-      ref1: '0307030053000166    ',
-      ref2: '0307030053000166    ',
+      ref1: '0307030053000166         ',
+      ref2: '0307030053000166         ',
       systemCode: '03',
       systemAmount: 53000,
       systemTransactionCode: makeid()
