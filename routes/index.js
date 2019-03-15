@@ -10,33 +10,33 @@ function makeid() {
   return text;
 }
 var reqSingle = {
-  SystemId: 'WSS',
-  UserName: 'wss001',
-  Password: '123456',
-  IpAddress: '10.11.1.10',
-  RequestData: {
-    DocNoList: [
+  systemId: 'WSS',
+  userName: 'wss001',
+  password: '123456',
+  ipAddress: '10.11.1.10',
+  requestData: {
+    docNoList: [
       {
-        DocNo: '256100000205'
+        docNo: '256100000205'
       }
     ]
   } 
 }
 var reqGroup = {
-  SystemId: 'WSS',
-  UserName: 'wss001',
-  Password: '123456',
-  IpAddress: '10.11.1.10',
-  RequestData: {
-    DocNoList: [
+  systemId: 'WSS',
+  userName: 'wss001',
+  password: '123456',
+  ipAddress: '10.11.1.10',
+  requestData: {
+    docNoList: [
       {
-        DocNo: '256100000205'
+        docNo: '256100000205'
       },
       {
-        DocNo: '256100000060'
+        docNo: '256100000060'
       },
       {
-        DocNo: '256100000510'
+        docNo: '256100000510'
       }
     ]
   } 
@@ -83,14 +83,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/EDRestServicesUAT/lic/LicFri0130', (req, res, next)=> {
-
+  console.log(req.body)
   if(JSON.stringify(req.body) == JSON.stringify(reqGroup))
   {
+    console.log('GroupReconcile')
     res.json(respGroup)
   }
 
   if(JSON.stringify(req.body) == JSON.stringify(reqSingle))
   {
+    console.log('SingleReconcile')
     res.json(respSingle)
   }
 })
