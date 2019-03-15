@@ -83,7 +83,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/EDRestServicesUAT/lic/LicFri0130', (req, res, next)=> {
-  console.log(req.body)
 
   if(JSON.stringify(req.body) == JSON.stringify(reqGroup))
   {
