@@ -17,7 +17,7 @@ var reqSingle = {
   requestData: {
     docNoList: [
       {
-        docNo: '256100000205'
+        docNo: '256100000060'
       }
     ]
   } 
@@ -42,20 +42,20 @@ var reqGroup = {
   } 
 }
 var respSingle = {
-  "ResponseCode": "OK", "ResponseMessage": "SUCCESS", "ResponseData": {
-  "LicenseList": [ {
-  "DocNo": "256100000060", "CusName": "นํางเง็กลั้ง แซ่เอี้ย", "ComName": "นํางเง็กลั้ง แซ่เอี้ย ", "LicNum": "2",
-  "LicPrice": "530",
-  "Offcode": "100300" } ]
+  responseCode: "OK", responseMessage: "SUCCESS", responseData: {
+  licenseList: [ {
+  docNo: "256100000060", cusName: "นํางเง็กลั้ง แซ่เอี้ย", comName: "นํางเง็กลั้ง แซ่เอี้ย ", licNum: "2",
+  licPrice: "530",
+  offcode: "100300" } ]
   } }
 var respGroup = {
-  "ResponseCode": "OK", "ResponseMessage": "SUCCESS", "ResponseData": {
-  "LicenseList": [ {
-  "DocNo": "256100000060", "CusName": "นํางเง็กลั้ง แซ่เอี้ย", "ComName": "นํางเง็กลั้ง แซ่เอี้ย ", "LicNum": "2",
-  "LicPrice": "530",
-  "Offcode": "100300" },
+  responseCode: "OK", responseMessage: "SUCCESS", responseData: {
+  licenseList: [ {
+  docNo: "256100000060", cusName: "นํางเง็กลั้ง แซ่เอี้ย", comName: "นํางเง็กลั้ง แซ่เอี้ย ", licNum: "2",
+  licPrice: "530",
+  offcode: "100300" },
   {
-  "DocNo": "256100000510", "CusName": "นํายชลอ เทพํานิช", "ComName": "นํายชลอ เทพํานิช ", "LicNum": "2",
+  DocNo: "256100000510", CusName: "นํายชลอ เทพํานิช", "ComName": "นํายชลอ เทพํานิช ", "LicNum": "2",
   "LicPrice": "430",
   "Offcode": "100300"
   }, {
@@ -84,6 +84,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/EDRestServicesUAT/lic/LicFri0130', (req, res, next)=> {
   console.log(req.body)
+  console.log(req.body.requestData.docNoList)
+  console.log(reqSingle)
+  console.log(reqSingle.requestData.docNoList)
   if(JSON.stringify(req.body) == JSON.stringify(reqGroup))
   {
     console.log('GroupReconcile')
